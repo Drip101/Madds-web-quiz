@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    border: 1px solid red;
+}
+
+body {
+    background-color: black;
+}
+
+
+p {
+    color: whitesmoke;
+}
+
+
+.outer-container {
+    padding: 10px;
+}
+
+
+.top-bar button {}
