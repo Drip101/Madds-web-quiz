@@ -1,16 +1,8 @@
 Question 1: "Where is the correct place to insert a JavaScript?
-a. The
-
-<head> section
-    b. The
-
-<body> section
-    c. Both the
-
-    <head> section and the
-
-    <body> section are correct.
-        d. None of the above
+a. The <head> section
+    b. The <body> section
+    c. Both the <head> section and the <body> section are correct.
+    d. None of the above
         Correct Answer: C.
 
 

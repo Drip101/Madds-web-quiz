@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: black;   
+    background-color: white;   
 }
 
 
@@ -21,9 +21,10 @@ p {
 
 button {
     outline: none;
-    background-color: beige;
+    background-color: black;
     color: whitesmoke;
     font-size: 1.3em;
+    
 }
 /* ------------------------ */
 /* Outer Container Section */
