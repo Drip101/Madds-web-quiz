@@ -3,22 +3,60 @@
     padding: 0;
     box-sizing: border-box;
 
-    border: 1px solid red;
+    /* debugging */
+    border: 1px solid green;
+/* global default font*/
+    font-family: monospace;
 }
 
 body {
-    background-color: black;
+    background-color: black;   
 }
 
 
 p {
     color: whitesmoke;
+    font-size: 1.3em;
 }
 
+button {
+    outline: none;
+    background-color: beige;
+    color: whitesmoke;
+    font-size: 1.3em;
+}
+/* ------------------------ */
+/* Outer Container Section */
+/* ------------------------ */
 
 .outer-container {
     padding: 10px;
+    height: 50vh;
+}
+/* ------------------------- */
+/* Top-Bar Container Section */
+/* ------------------------- */
+
+.top-bar p {
+    float: right;
 }
 
+/* ------------------------- */
+/* Inner - Container Section */
+/* ------------------------- */
 
-.top-bar button {}
+.inner-container {
+background-color: black;
+height: 100%;
+}
+
+/* ------------------------- */
+/* Header/Quiz Intro Section */
+/* ------------------------- */
+
+
+
+
+/* ----------------- */
+/* Main Quiz Content */
+/* ----------------- */
