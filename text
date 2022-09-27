@@ -7,12 +7,11 @@ a. The <head> section
 
 
         Question 2: "How can you add a comment in JavaScript?"
-        a.
-        <!--This is a comment-->
+        a. <!--This is a comment-->
         b. //This is a comment
         c.'This is a comment
         d. "This is a comment"
-        Correct Answer: C.
+        Correct Answer: B.
 
 
         Question 3: "What is the correct way to write a JavaScript array?"
