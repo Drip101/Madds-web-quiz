@@ -1,6 +1,7 @@
 var startbutton = document.getElementById("startbutton");
 var quizIntro = document.querySelector('.quiz-intro')
 var rightanswer = document.querySelector('#rightAnswer')
+let _s = (e) => document.querySelector(e)
 var index = 0
 var Questions = [
     {
@@ -27,7 +28,7 @@ var Questions = [
 
     , {
         question: 'Question 5: What does CSS stand for?',
-        choices: ['a. Computer Style Sheets', 'b. Creative Style Sheets', 'c. Cascading Style Sheets', 'd. Colorful Style Sheets']
+        choices: ['a. Computer Style Sheets', 'b. Creative Style Sheets', 'c. Cascading Style Sheets', 'd. Colorful Style Sheets'],
         answer: 'c. Cascading Style Sheets'
     }
 ]
@@ -45,12 +46,27 @@ function checkAnswer() {
     }
 
 }
-
+function getNextQuestion() {
+    _s(".choices").innerHTML = ""
+    _s("#question").textContent = Questions[index].question
+    Questions[index].choices.forEach(choice => {
+        let btn = document.createElement("button")
+        btn.textContent = choice
+        _s(".choices").append(btn)
+        btn.addEventListener("click", () => {
+            index++
+            getNextQuestion()
+        })
+    })
+}
 function startGame() {
+    _s(".intro").classList.add("hidden")
+    _s(".questions").classList.remove("hidden")
     console.log('Game has started')
-    var h2El = document.querySelector('#question')
-    h2El.textContent = Questions[index].question
+    getNextQuestion()
+
 
 }
 
-rightanswer.addEventListener('click', checkAnswer)
+
+
