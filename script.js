@@ -1,9 +1,9 @@
-var startbutton = document.getElementById("startbutton");
-var quizIntro = document.querySelector('.quiz-intro')
-var rightanswer = document.querySelector('#rightAnswer')
+let startbutton = document.getElementById("startbutton");
+let quizIntro = document.querySelector('.quiz-intro')
+let rightanswer = document.querySelector('#rightAnswer')
 let _s = (e) => document.querySelector(e)
-var index = 0
-var Questions = [
+let index = 0, points = 0, timer = 30
+let Questions = [
     {
         question: 'Question 1: "Where is the correct place to insert a JavaScript?',
         choices: ['a. The <head> section', 'b. The <body> section', 'c. Both the <head> section and the <body> section are correct.', 'd. None of the above'],
@@ -36,36 +36,60 @@ startbutton.addEventListener('click', function () {
     startGame()
 })
 
-function checkAnswer() {
-    if (question[index].answer === event.target.textContent) {
-        index++
-        startGame()
+function checkAnswer(event, question) {
+    console.log(question.answer, event.target.textContent);
+    if (question.answer === event.target.textContent) {
+        points += 20
+        _s("#incorrect").innerText = "correct"
     } else {
         //minus time
-        return
+        timer -= 5
+        _s("#incorrect").innerText = "wrong"
     }
 
 }
 function getNextQuestion() {
+    if (index === 4) endgame()
     _s(".choices").innerHTML = ""
+    _s("#incorrect").innerHTML = ""
     _s("#question").textContent = Questions[index].question
     Questions[index].choices.forEach(choice => {
         let btn = document.createElement("button")
         btn.textContent = choice
         _s(".choices").append(btn)
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
+            checkAnswer(e, Questions[index])
             index++
-            getNextQuestion()
+            setTimeout(() => {
+                getNextQuestion()
+            }, 2000);
+
         })
     })
 }
 function startGame() {
+    let tick = setInterval(() => {
+        if (timer <= 0) {
+            endgame()
+            clearInterval(tick)
+        }
+        timer--
+        _s("#timer").innerText = timer
+    }, 1000)
     _s(".intro").classList.add("hidden")
     _s(".questions").classList.remove("hidden")
     console.log('Game has started')
     getNextQuestion()
 
 
+}
+function endgame() {
+    _s(".outro").classList.remove("hidden")
+    _s(".questions").classList.add("hidden")
+    _s("#score").innerText = points
+    index = 0
+    points = 0
+    timer = 60
 }
 
 
