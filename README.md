@@ -1,5 +1,5 @@
 # Madds-web-quiz
-timer quiz
+https://drip101.github.io/Madds-web-quiz/
 
 A fun 30 second quiz of 5 questions of coding fundementals to test your knowledge! 
 Test your knowledge to see if you can answer all 5 questions and the highscore get to also 
